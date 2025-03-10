@@ -3,7 +3,6 @@ import AddRecipeForm from "./Component/AddRecipeForm"
 
 function App() {
 
-
   return (
     <>
     <div>
@@ -14,5 +13,6 @@ function App() {
     </>
   )
 }
+
 
 export default App
