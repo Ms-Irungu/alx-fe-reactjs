@@ -8,9 +8,9 @@ const EditRecipeForm = ({ recipeId }) => {
     const updateRecipe = useRecipeStore(state => state.updateRecipe);
 
     // Local state for updated values
-    const [title, setTitle] = useState(recipe.title);
-    const [description, setDescription] = useState(recipe.description);
-
+    const [title, setTitle] = useState(recipe?.title || '');
+    const [description, setDescription] = useState(recipe?.description || '');
+    
     // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevents page refresh
