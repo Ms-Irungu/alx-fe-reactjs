@@ -39,6 +39,8 @@ const RegistrationForm = () => {
         } 
 
         console.log("Form submitted", formData); //just to see if everything works
+         // Reset form
+        setFormData({ username: "", email: "", password: "" });
         setError(''); //Clear error message after successful submission
     }
 
