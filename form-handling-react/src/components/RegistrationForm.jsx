@@ -19,10 +19,8 @@ const RegistrationForm = () => {
     //e.target.name gets the name of the input field (username, email, or password).
     //e.target.value gets the value entered in the input field.
     const handleChange = (e) => {
-        setFormData({
-            ...formData, //...formData spreads the existing data so we don’t lose previous inputs.
-            [e.target.name]: e.target.value
-        });
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
     //create a function to handle form submission
