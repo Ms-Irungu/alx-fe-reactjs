@@ -13,7 +13,7 @@ const RecipeDetails = () => {
 
   if (!recipe) {
     return(
-      <div>
+      <div className='not-found-container'>
         <h2>Recipe not found</h2>
         <button onClick={() => navigate('/')}>Return to Home</button>
       </div>
@@ -21,12 +21,12 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div>
-      <h1>{recipe.title}</h1>
-      <p>{recipe.description}</p>
+    <div className='recipe-container'>
+      <h1 className="recipe-title">{recipe.title}</h1>
+      <p className="recipe-description">{recipe.description}</p>
 
       {/* Render EditRecipeForm and DeleteRecipeButton here */}
-      <div>
+      <div className="recipe-actions">
         <EditRecipeForm recipeId={Number(id)} />
         <DeleteRecipeButton recipeId={Number(id)} />
       </div>
