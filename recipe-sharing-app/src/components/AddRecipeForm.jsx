@@ -22,7 +22,7 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div>
+    <div className='add-recipe-form'>
       <h2> Add New Recipe </h2>
       <form className='recipe-form' onSubmit={handleSubmit}>
         <input

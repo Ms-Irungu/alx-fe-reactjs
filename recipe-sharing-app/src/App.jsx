@@ -13,12 +13,13 @@ function App() {
         <Link to="/add">Add Recipe</Link>
       </nav>
 
+      <div className="content">
       <Routes>
         <Route path="/" element={<RecipeList />} />
         <Route path="/add" element={<AddRecipeForm />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
-
+      </div>
     </BrowserRouter>
   );
 }
