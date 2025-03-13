@@ -2,31 +2,44 @@ import React from 'react'
 import { useState } from 'react'
 
 const RegistrationForm = () => {
+    //create state to store the values entered in the form
+    //formData is an object that holds values for username, email, and password
     const [formData, setFormData] = useState({
         username: '',
         email: '',
         password: ''
     });
 
+    //create state to store error message.
+    //error is a string that holds the error message
     const [error, setError] = useState('');
 
+    //create a function to handle changes in the form fields
+    //We need to update formData every time the user types something in the input fields.
+    //e.target.name gets the name of the input field (username, email, or password).
+    //e.target.value gets the value entered in the input field.
     const handleChange = (e) => {
         setFormData({
-            ...formData,
+            ...formData, //...formData spreads the existing data so we don’t lose previous inputs.
             [e.target.name]: e.target.value
         });
     };
 
+    //create a function to handle form submission
+    //By default, when you submit a form, the page refreshes. We don’t want that to happen.
+    //We want to handle the data ourselves.
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); //prevents the page from reloading so we can handle the data properly.
 
         //Ensure no fields are empty upon validation
+        //If any field is empty, setError updates 
+        // the error message and stops the form from submitting.
         if (!formData.username || !formData.email || !formData.password) {
             setError('All fields are required');
             return;
         } 
 
-        console.log("Form submitted", formData);
+        console.log("Form submitted", formData); //just to see if everything works
         setError(''); //Clear error message after successful submission
     }
 
@@ -34,7 +47,7 @@ const RegistrationForm = () => {
     return (
         <div className='form-container'>
             <h2>Register</h2>
-            {error && <p className='error'>{error}</p>}
+            {error && <p className='error'>{error}</p>} {/*display error message if any exists*/}
         
             <form onSubmit = {handleSubmit}>
             <input
