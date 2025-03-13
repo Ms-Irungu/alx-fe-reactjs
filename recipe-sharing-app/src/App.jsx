@@ -1,16 +1,22 @@
 import RecipeList from "./components/RecipeList" 
 import AddRecipeForm from "./components/AddRecipeForm"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 function App() {
 
   return (
-    <>
-    <div>
-      <h1>Recipe Sharing App</h1>
-      <AddRecipeForm /> {/*Add new recipes */}
-      <RecipeList /> {/*Display the list of recipes*/}
-    </div>
-    </>
+   <BrowserRouter>
+    <nav>
+      <Link to = "/">Home</Link>
+      <Link to = "/add">Add Recipe</Link>
+    </nav>
+
+    <Routes> 
+      <Route path = "/" element = {<RecipeList />} />
+      <Route path = "/add" element = {<AddRecipeForm />} />
+    </Routes>
+
+   </BrowserRouter>
   )
 }
 
