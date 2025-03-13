@@ -7,10 +7,9 @@ const RegistrationForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password: ''
+        password: '',
     });
-    const { username, email, password } = formData;
-    
+
 
     //create state to store error message.
     //error is a string that holds the error message
@@ -54,7 +53,7 @@ const RegistrationForm = () => {
                 type="text"
                 name="username"
                 placeholder="Enter your name"
-                value = {username}
+                value = {formData.username}
                 onChange = {handleChange}
             />
 
@@ -62,7 +61,7 @@ const RegistrationForm = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                value = {email}
+                value = {formData.email}
                 onChange = {handleChange}
             />
 
@@ -70,7 +69,7 @@ const RegistrationForm = () => {
                 type="password"
                 name="password"
                 placeholder="Enter your password"
-                value = {password}
+                value = {formData.password}
                 onChange = {handleChange}
             />
             <button type="submit">Register</button>
