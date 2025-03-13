@@ -7,7 +7,8 @@ function App() {
 
   return (
    <BrowserRouter>
-    <nav>
+    <nav className="navbar">
+      <h1>Recipe Sharing App</h1>
       <Link to = "/">Home</Link>
       <Link to = "/add">Add Recipe</Link>
     </nav>
