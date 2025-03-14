@@ -15,7 +15,8 @@ const PostsComponent = () => {
         queryKey: ['posts'],
         queryFn: fetchPosts, //The function that will be used to fetch the data
         staleTime: 20000, //The time in milliseconds after which the data will be considered stale
-        cacheTime: 30000, //The time in milliseconds after which the data will be removed from the cache
+        refetchOnWindowFocus: false, // Prevent automatic refetching when switching tabs
+        keepPreviousData: true, // Keeps old data while fetching new data
     });
 
     //If the data is still loading, display a loading message
@@ -32,7 +33,7 @@ const PostsComponent = () => {
     return (
         <div>
             <h1>Posts</h1>
-            <button onClick={() => refetch()}>Refetch</button>
+            <button onClick={() => refetch()}>Refetch Data</button>
             <br />
             <ul>
                 {data.map(post => (
