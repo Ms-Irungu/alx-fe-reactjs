@@ -15,6 +15,9 @@ const PostsComponent = () => {
         queryKey: ['posts'],
         queryFn: fetchPosts, //The function that will be used to fetch the data
         staleTime: 20000, //The time in milliseconds after which the data will be considered stale
+        cacheTime: 40000, //The time in milliseconds after which the data will be removed from the cache
+        refetchInterval: false, // Disable automatic refetching at an interval
+        refetchIntervalInBackground: false, // Disable automatic refetching in the background
         refetchOnWindowFocus: false, // Prevent automatic refetching when switching tabs
         keepPreviousData: true, // Keeps old data while fetching new data
     });
