@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 const BlogPost = () => {
-  const { postId } = useParams(); // Get the blog post ID from the URL
+  const { id } = useParams(); // Get the blog post ID from the URL
 
   // Sample blog content
   const blogPosts = {
@@ -11,7 +11,7 @@ const BlogPost = () => {
   };
 
   // Find the blog post based on the ID
-  const post = blogPosts[postId];
+  const post = blogPosts[id];
 
   if (!post) {
     return <h2>Post not found</h2>;

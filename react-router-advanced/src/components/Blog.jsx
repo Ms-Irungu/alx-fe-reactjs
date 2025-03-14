@@ -10,11 +10,11 @@ const Blog = () => {
 
   return (
     <div>
-      <h1>Blog</h1>
+      <h1>Blog Posts</h1>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <Link to={`/post/${post.id}`}>{post.title}</Link>
+            <Link to={`/blog/${post.id}`}>{post.title}</Link> {/* Dynamic Links */}
           </li>
         ))}
       </ul>

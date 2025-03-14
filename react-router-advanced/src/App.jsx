@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
 
         {/*Dynamic Route for blog post*/}
-        <Route path="/post/:postId" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
         {/* Nested Routes for profile
         <Route path="/profile" element={<Profile />}>
