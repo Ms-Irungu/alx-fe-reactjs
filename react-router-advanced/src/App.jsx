@@ -31,11 +31,11 @@ const App = () => {
         {/*Dynamic Route for blog post*/}
         <Route path="/post/:postId" element={<BlogPost />} />
 
-        {/*Nested Routes for profile*/}
+        {/* Nested Routes for profile
         <Route path="/profile" element={<Profile />}>
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
-        </Route>
+        </Route> */}
       </Routes>
     </Router>
   );
