@@ -1,15 +1,21 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query';
 
+const fetchPosts = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+}
+
 //Define a PostsComponent that will use the useQuery hook to fetch data from the API
 const PostsComponent = () => {
 
     //Use the useQuery hook to fetch data from the API
-    const { data, isError, isLoading } = useQuery({
+    const { data, isError, isLoading, refetch } = useQuery({
         queryKey: ['posts'],
-        queryFn: () =>
-            fetch('https://jsonplaceholder.typicode.com/posts')
-                .then((res) => res.json()),
+        queryFn: fetchPosts, //The function that will be used to fetch the data
+        staleTime: 20000, //The time in milliseconds after which the data will be considered stale
+        cacheTime: 30000, //The time in milliseconds after which the data will be removed from the cache
     });
 
     //If the data is still loading, display a loading message
@@ -26,6 +32,8 @@ const PostsComponent = () => {
     return (
         <div>
             <h1>Posts</h1>
+            <button onClick={() => refetch()}>Refetch</button>
+            <br />
             <ul>
                 {data.map(post => (
                     <li key={post.id}>{post.title}</li>
