@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 const PostsComponent = () => {
 
     //Use the useQuery hook to fetch data from the API
-    const { data, error, isLoading } = useQuery({
+    const { data, isError, isLoading } = useQuery({
         queryKey: ['posts'],
         queryFn: () =>
             fetch('https://jsonplaceholder.typicode.com/posts')
@@ -18,7 +18,7 @@ const PostsComponent = () => {
 
     //If there is an error fetching the data, display an error message
     //Handle error state
-    if (error) return <div>Error loading data</div>
+    if (isError) return <div>Error loading data</div>
 
     //If the data has been fetched successfully, display the data
     //Handle success state
