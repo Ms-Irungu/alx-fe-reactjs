@@ -1,6 +1,6 @@
-import React, {useState }from 'react'
-//integrate react-router-dom
+import React from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+
 //import components
 import Home from './components/Home'
 import About from './components/About'
@@ -12,13 +12,11 @@ import Blog from './components/Blog'
 import BlogPost from './components/BlogPost'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginPage from './components/LoginPage'
+import useAuth from './components/useAuth'
 
 const App = () => {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
+  const { isAuthenticated, login, logout } = useAuth(); // Use custom hook
 
 
   return (
@@ -41,16 +39,14 @@ const App = () => {
       </nav>
 
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/profile/*" element={<Profile />} /> */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} /> {/*Dynamic Route for blog post*/}
         <Route path="/login" element={<LoginPage login={login} />} />
-
-        {/*Dynamic Route for blog post*/}
-        <Route path="/blog/:id" element={<BlogPost />} />
-
+        
         {/* Protected Route */}
         <Route
           path="/profile/*"
