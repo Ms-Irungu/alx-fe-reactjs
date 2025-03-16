@@ -5,7 +5,7 @@ const ProfileDetails = () => {
         <p>Name: John Doe</p>
         <p>Email: john@example.com</p>
     </div>
-    )
+    );
     
   };
   

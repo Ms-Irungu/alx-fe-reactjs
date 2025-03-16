@@ -26,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/profile/*" element={<Profile />} />
         <Route path="/blog" element={<Blog />} />
 
         {/*Dynamic Route for blog post*/}
