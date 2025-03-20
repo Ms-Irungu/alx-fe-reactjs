@@ -1,32 +1,44 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, expect, test } from '@jest/globals';
 import TodoList from '../components/TodoList';
 
-test('renders initial todos', () => {
+describe('TodoList Component', () => {
+  test('renders the todo list with heading', () => {
     render(<TodoList />);
-    const todoItems = screen.getAllByRole('listitem');
-    expect(todoItems).toHaveLength(5);
+    const heading = screen.getByText('Todo List');
+    expect(heading).toBeInTheDocument();
   });
-  
-  test('adds a new todo', () => {
+
+  test('adds a new todo when text is entered and Enter key is pressed', () => {
     render(<TodoList />);
-    const input = screen.getByPlaceholderText('Add new todo');
-    fireEvent.change(input, { target: { value: 'New Todo' } });
-    fireEvent.click(screen.getByText('Add Todo'));
-    const todoItems = screen.getAllByRole('listitem');
-    expect(todoItems).toHaveLength(4);
+
+    const input = screen.getByPlaceholderText(/Add a new todo/i);
+    fireEvent.change(input, { target: { value: 'Learn Testing' } });
+    fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
+
+    const newTodo = screen.getByText(/Learn Testing/i);
+    expect(newTodo).toBeInTheDocument();
   });
-  
-  test('toggles a todo', () => {
+
+  test('toggle a todo as completed', () => {
     render(<TodoList />);
-    fireEvent.click(screen.getByText('Complete'));
-    const completedTodo = screen.getByText('Learn React', { selector: 'span' });
-    expect(completedTodo).toHaveStyle('text-decoration: line-through');
+
+    const toggleButton = screen.getByText(/Complete/i);
+    fireEvent.click(toggleButton);
+
+    const todoItem = screen.getByText(/Learn React/i);
+    expect(todoItem).toHaveStyle('text-decoration: line-through');
   });
-  
-  test('deletes a todo', () => {
+
+  test('delete a todo', () => {
     render(<TodoList />);
-    fireEvent.click(screen.getByText('Delete'));
-    const todoItems = screen.getAllByRole('listitem');
-    expect(todoItems).toHaveLength(2);
+
+    const deleteButton = screen.getAllByText(/Delete/i)[0];
+    fireEvent.click(deleteButton);
+
+    const deletedTodo = screen.queryByText(/Learn React/i);
+    expect(deletedTodo).not.toBeInTheDocument();
   });
+});

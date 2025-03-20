@@ -1,35 +1,34 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const TodoList = () => {
-const [todos, setTodos] = useState([
-  {id: 1, text: 'Learn React', done: true},
-  {id: 2, text: 'Learn Firebase', done: false},
-  {id: 3, text: 'Learn GraphQL', done: false},
-  {id: 4, text: 'Learn Node.js', done: false},
-  {id: 5, text: 'Learn TypeScript', done: false}
-]);
+  const [todos, setTodos] = useState([
+    { id: 1, text: 'Learn React', done: true },
+    { id: 2, text: 'Learn Firebase', done: false },
+    { id: 3, text: 'Learn GraphQL', done: false },
+    { id: 4, text: 'Learn Node.js', done: false },
+    { id: 5, text: 'Learn TypeScript', done: false }
+  ]);
+
+  // Track input field value
+  const [inputValue, setInputValue] = useState(''); // Track input field value
 
   //method for adding new todo
-  const addTodo = (text) => {
-    const newTodos = [...todos, { id: todos.length + 1, text, completed: false }];
-    setTodos(newTodos);
+  const addTodo = () => {
+    if(inputValue.trim() === '') return; //prevents adding empty todos
+    setTodos([...todos, { id: todos.length + 1, text: inputValue, done: false }]);
+    setInputValue(''); //clears input field after adding todo
   };
 
   //method for toggling todo
   const toggleTodo = (id) => {
-    const newTodos = todos.map(todo => {
-      if (todo.id === id) {
-        return { ...todo, done: !todo.done };
-      }
-      return todo;
-    });
-    setTodos(newTodos);
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo 
+    ));
   };
 
   //method for deleting todo
   const deleteTodo = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
@@ -51,11 +50,11 @@ const [todos, setTodos] = useState([
       <input
         type="text"
         placeholder="Add a new todo"
-        onChange={(e) => setTodos([...todos, { id: todos.length + 1, text: e.target.value, done: false }])}
+        value = {inputValue} // Display input field value, Controlled component
+        onChange={(e) => setInputValue(e.target.value)} // Update state only
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
-            addTodo(e.target.value);
-            e.target.value = '';
+            addTodo(); //add todo when Enter key is pressed
           }
         }}
       />
