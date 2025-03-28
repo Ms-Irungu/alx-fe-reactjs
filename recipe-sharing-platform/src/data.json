@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+      "image": "https://media.istockphoto.com/id/1581084025/photo/plate-with-spaghetti-carbonara-on-a-laid-table.jpg?s=1024x1024&w=is&k=20&c=DZc8mPKV15Ymdi_32EwsiIHKi52K9DXLDct2Ufm_AGg="
+    },
+    {
+      "id": 2,
+      "title": "Chicken Tikka Masala",
+      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+      "image": "https://media.istockphoto.com/id/1344307329/photo/indian-chicken-curry-with-naan-bread-and-poppadum.jpg?s=1024x1024&w=is&k=20&c=vYdMDDTb6wax2Nb9cxRUTLsdGOwQMUFBHhML9ieUSLc="
+    }
+  ]
