@@ -4,8 +4,10 @@ import HomePage from './components/HomePage'
 function App () {
   return (
     <>
-      <h1 className='text-blue-500'>Recipe Sharing Platform</h1>
-      <HomePage />
+      <h1 className="font-bold text-2xl" >Welcome to my Recipe Sharing Platform</h1>
+      <div>
+        <HomePage />
+      </div>
     </>
   )
 }
