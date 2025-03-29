@@ -1,4 +1,4 @@
-import React, { useState, useEffect, use } from 'react'
+import React, { useState, useEffect} from 'react'
 import jsonData from '../data.json'
 
 const HomePage = () => {
@@ -12,6 +12,7 @@ const HomePage = () => {
         setRecipes(jsonData) //set recipes state
       } catch (error) {
         console.error('Error fetching data: ', error) //Log any errors
+        setError('Failed to fetch recipes. Please try again later.') //set error state
       }
     }
     fetchData() //call the fetch data function
