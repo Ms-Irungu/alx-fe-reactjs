@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom' //import useNavigate from react-router-dom
-
 import jsonData from '../data.json' //import json data from data.json
 
 const HomePage = () => {
@@ -21,6 +20,17 @@ const HomePage = () => {
   }, []) //fetch recipes from the API
 
   return (
+    <div className='p-5'>
+      {/* Add Recipe Button */}
+      <div className='flex justify-end mb-5'>
+        <Link
+          to='/add-recipe'
+          className='bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600'
+        >
+          Add New Recipe
+        </Link>
+      </div>
+
     <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5'>
       {error && <p className='text-red-500'>{error}</p>}{' '}
       {/* Show error if fetching fails */}
@@ -51,6 +61,7 @@ const HomePage = () => {
         </article>
       ))}
     </section>
+    </div>
   )
 }
 

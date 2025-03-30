@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Clock, Users } from 'lucide-react'
 import jsonData from '../data.json'
 
 const RecipeDetail = () => {
@@ -29,7 +30,7 @@ const RecipeDetail = () => {
 
   return (
     <section className='max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg'>
-      <div className='relative h-100 '>
+      <div className='relative h-96 '>
         <img
           src={recipe.image}
           alt={recipe.title}
@@ -38,6 +39,30 @@ const RecipeDetail = () => {
       </div>
       <h1 className='text-2xl font-bold text-gray-800 mt-4'>{recipe.title}</h1>
       <p className='text-gray-600 mt-2'>{recipe.summary}</p>
+
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 mb-8'>
+        <div className='flex items-center gap-3'>
+          <Clock className='w-5 h-5 text-orange-500' />
+          <div>
+            <p className='text-sm text-gray-500'>Prep Time</p>
+            <p className='font-medium'>{recipe.prepTime}</p>
+          </div>
+        </div>
+        <div className='flex items-center gap-3'>
+          <Clock className='w-5 h-5 text-orange-500' />
+          <div>
+            <p className='text-sm text-gray-500'>Cook Time</p>
+            <p className='font-medium'>{recipe.cookTime}</p>
+          </div>
+        </div>
+        <div className='flex items-center gap-3'>
+          <Users className='w-5 h-5 text-orange-500' />
+          <div>
+            <p className='text-sm text-gray-500'>Servings</p>
+            <p className='font-medium'>{recipe.servings} people</p>
+          </div>
+        </div>
+      </div>
 
       {/* Ingredients */}
       <div className='mt-6'>

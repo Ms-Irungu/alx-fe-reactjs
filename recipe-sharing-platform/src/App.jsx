@@ -2,12 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import RecipeDetail from './components/RecipeDetail';
+import AddRecipeForm from './components/AddRecipeForm';
 
-function App () {
+function App() {
   return (
-    <>
-      <section className='text-center mb-8 pt-8' >
-        <h2 className='text-3xl font-bold text-gray-900 mb-4'>
+    <Router>
+      <section className='text-center mb-8 pt-8'>
+        <h2 className='text-3xl font-bold text-orange-500 mb-4'>
           Discover Delicious Recipes
         </h2>
         <p className='text-gray-600 max-w-2xl mx-auto'>
@@ -15,14 +16,14 @@ function App () {
           enthusiasts from around the world.
         </p>
       </section>
-      
-      <Router>
+
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/recipe/:id' element={<RecipeDetail />} />
+        <Route path='/add-recipe' element={<AddRecipeForm />} />
+        <Route path='*' element={<h1 className='text-center text-2xl font-bold'>404 Not Found</h1>} />
       </Routes>
     </Router>
-    </>
   )
 }
 
