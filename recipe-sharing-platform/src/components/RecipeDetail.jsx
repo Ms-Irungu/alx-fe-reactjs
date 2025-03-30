@@ -40,21 +40,29 @@ const RecipeDetail = () => {
       <p className='text-gray-600 mt-2'>{recipe.summary}</p>
 
       {/* Ingredients */}
-      <div className='mt-4'>
-        <h2 className='text-xl font-semibold text-gray-700'>Ingredients</h2>
-        <ul className='list-disc list-inside text-gray-600'>
-          {recipe.ingredients?.map((item, index) => (
-            <li key={index}>{item}</li>
+      <div className='mt-6'>
+        <h2 className='text-2xl font-bold text-gray-900 mb-4'>Ingredients</h2>
+        <ul className='space-y-3'>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index} className='flex items-center gap-3'>
+              <div className='w-2 h-2 rounded-full bg-orange-500'></div>
+              <span className='text-gray-700'>{ingredient}</span>
+            </li>
           ))}
         </ul>
       </div>
 
       {/* Instructions */}
-      <div className='mt-4'>
-        <h2 className='text-xl font-semibold text-gray-700'>Instructions</h2>
-        <ol className='list-decimal list-inside text-gray-600'>
-          {recipe.instructions?.map((step, index) => (
-            <li key={index}>{step}</li>
+      <div className='mt-6'>
+        <h2 className='text-2xl font-bold text-gray-900 mb-4'>Instructions</h2>
+        <ol className='space-y-6'>
+          {recipe.instructions.map((instruction, index) => (
+            <li key={index} className='flex gap-4'>
+              <span className='flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center font-medium'>
+                {index + 1}
+              </span>
+              <p className='text-gray-700'>{instruction}</p>
+            </li>
           ))}
         </ol>
       </div>
