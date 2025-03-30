@@ -5,20 +5,40 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
+  const [errors, setErrors] = useState({}); // State to track validation errors
+
+  // Validation function
+  const validate = () => {
+    let newErrors = {};
+
+    if (!title.trim()) newErrors.title = "Recipe title is required.";
+    if (!ingredients.trim()) {
+      newErrors.ingredients = "Ingredients are required.";
+    } else {
+      const ingredientList = ingredients.split(",").map((item) => item.trim());
+      if (ingredientList.length < 2) {
+        newErrors.ingredients = "Enter at least two ingredients.";
+      }
+    }
+    if (!steps.trim()) newErrors.steps = "Preparation steps are required.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!validate()) return; // Stop submission if validation fails
+
     console.log("Recipe Submitted:", { title, ingredients, steps });
-    if (!title || !ingredients || !steps) {
-      alert("Please fill in all fields.");
-      return;
-    }
 
     // Reset form after submission
     setTitle("");
     setIngredients("");
     setSteps("");
+    setErrors({});
   };
 
   return (
@@ -36,6 +56,7 @@ const AddRecipeForm = () => {
             className="w-full border rounded p-2 mt-1"
             placeholder="Enter recipe title"
           />
+          {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
         </div>
 
         {/* Ingredients Textarea */}
@@ -47,6 +68,7 @@ const AddRecipeForm = () => {
             className="w-full border rounded p-2 mt-1"
             placeholder="Enter ingredients, separated by commas"
           />
+          {errors.ingredients && <p className="text-red-500 text-sm">{errors.ingredients}</p>}
         </div>
 
         {/* Preparation Steps Textarea */}
@@ -58,6 +80,7 @@ const AddRecipeForm = () => {
             className="w-full border rounded p-2 mt-1"
             placeholder="Describe the preparation steps"
           />
+          {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         </div>
 
         {/* Submit Button */}
