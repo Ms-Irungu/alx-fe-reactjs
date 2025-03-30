@@ -6,13 +6,6 @@ import RecipeDetail from './components/RecipeDetail';
 function App () {
   return (
     <>
-    <Router>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/recipe/:id' element={<RecipeDetail />} />
-      </Routes>
-    </Router>
-    
       <section className='text-center mb-8 pt-8' >
         <h2 className='text-3xl font-bold text-gray-900 mb-4'>
           Discover Delicious Recipes
@@ -22,9 +15,13 @@ function App () {
           enthusiasts from around the world.
         </p>
       </section>
-      <div>
-        <HomePage />
-      </div>
+      
+      <Router>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/recipe/:id' element={<RecipeDetail />} />
+      </Routes>
+    </Router>
     </>
   )
 }

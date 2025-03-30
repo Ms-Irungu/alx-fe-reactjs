@@ -3,12 +3,125 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "ingredients": [
+        "400g spaghetti",
+        "200g guanciale or pancetta",
+        "4 large eggs",
+        "100g Pecorino Romano",
+        "100g Parmigiano Reggiano",
+        "Black pepper",
+        "Salt"
+      ],
+      "instructions": [
+        "Bring a large pot of salted water to boil and cook spaghetti according to package instructions",
+        "While pasta cooks, cut guanciale into small cubes and cook in a pan until crispy",
+        "In a bowl, whisk eggs, grated cheeses, and black pepper",
+        "When pasta is al dente, reserve 1 cup of pasta water and drain",
+        "Working quickly, add hot pasta to the pan with guanciale, then remove from heat",
+        "Add egg mixture, stirring quickly to coat pasta and create a creamy sauce",
+        "Add pasta water as needed to achieve desired consistency",
+        "Serve immediately with extra cheese and black pepper"
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes",
+      "servings": 4,
+      "difficulty": "Intermediate"
+      
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hpY2tlbiUyMFRpa2thJTIwTWFzYWxhfGVufDB8fDB8fHww"
+      "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hpY2tlbiUyMFRpa2thJTIwTWFzYWxhfGVufDB8fDB8fHww",
+      "ingredients": [
+      "800g chicken breast",
+      "2 cups yogurt",
+      "2 tbsp garam masala",
+      "400g crushed tomatoes",
+      "2 onions",
+      "4 cloves garlic",
+      "2-inch piece ginger",
+      "Heavy cream",
+      "Butter",
+      "Various spices"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for at least 4 hours",
+      "Grill or broil chicken until charred and cooked through",
+      "In a large pot, sauté onions, garlic, and ginger until golden",
+      "Add tomatoes and spices, simmer until oil separates",
+      "Blend sauce until smooth, return to pot",
+      "Add grilled chicken and cream, simmer for 10 minutes",
+      "Finish with butter and garnish with cilantro",
+      "Serve hot with naan bread and rice"
+    ],
+    "prepTime": "4 hours",
+    "cookTime": "45 minutes",
+    "servings": 6,
+    "difficulty": "Advanced"
+    },
+    {
+      "id": 3,
+      "title": "Mediterranean Quinoa Bowl",
+      "summary": "A healthy and colorful bowl packed with quinoa, fresh vegetables, feta cheese, and a zesty lemon dressing. Perfect for clean eating.",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800",
+      "ingredients": [
+        "2 cups quinoa",
+        "4 cups vegetable broth",
+        "1 cucumber",
+        "2 cups cherry tomatoes",
+        "1 red onion",
+        "200g feta cheese",
+        "Kalamata olives",
+        "Fresh herbs",
+        "Olive oil",
+        "Lemon juice"
+      ],
+      "instructions": [
+        "Rinse quinoa thoroughly and cook in vegetable broth",
+        "While quinoa cooks, chop all vegetables",
+        "Make dressing with olive oil, lemon juice, and herbs",
+        "Once quinoa is cooked, let it cool slightly",
+        "Combine quinoa with chopped vegetables",
+        "Add crumbled feta and olives",
+        "Drizzle with dressing and toss gently",
+        "Serve at room temperature or chilled"
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "20 minutes",
+      "servings": 4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "title": "Classic French Toast",
+      "summary": "Thick slices of brioche bread dipped in vanilla-scented custard and grilled to golden perfection. Served with maple syrup and berries.",
+      "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=800",
+      "ingredients": [
+        "8 thick slices brioche bread",
+        "4 large eggs",
+        "1 cup milk",
+        "1 tsp vanilla extract",
+        "1/2 tsp cinnamon",
+        "Pinch of salt",
+        "Butter for cooking",
+        "Maple syrup",
+        "Fresh berries"
+      ],
+      "instructions": [
+        "Whisk together eggs, milk, vanilla, cinnamon, and salt",
+        "Heat a large skillet or griddle over medium heat",
+        "Dip each slice of bread in the egg mixture",
+        "Melt butter in the pan",
+        "Cook each slice until golden brown, about 3 minutes per side",
+        "Keep warm in a low oven while cooking remaining slices",
+        "Serve with maple syrup and fresh berries",
+        "Dust with powdered sugar if desired"
+      ],
+      "prepTime": "10 minutes",
+      "cookTime": "20 minutes",
+      "servings": 4,
+      "difficulty": "Easy"
     }
   ]
